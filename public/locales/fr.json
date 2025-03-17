@@ -1,0 +1,24 @@
+{
+    "home": {
+        "projects": "Projets",
+        "about": "À Propos",
+        "description": "Développeur Web en Freelance"
+    },
+    "projects": {
+        "title": "Projets",
+        "description": "Certains projets viennent du travail et d'autres sont sur mon temps libre",
+        "online": "En ligne",
+        "update": "Mise à jour",
+        "inDev": "En développement",
+        "offline": "Hors Ligne"
+    },
+    "about": {
+        "title": "À propos de moi",
+        "description": "Jeune développeur Freelance de 16 ans et étudiant en STI2D, je suis passionné par la programmation, l’astronomie et la création d’expériences utilisateur uniques.<br /><br />Curieux et créatif, j’aime concevoir des solutions innovantes, explorer de nouvelles technologies et perfectionner des interfaces pour les rendre intuitives et engageantes.<br />Toujours motivé par l’apprentissage et l’amélioration continue, je cherche à allier technique et créativité pour offrir des projets à la fois fonctionnels et inspirants."
+    },
+    "notFound": {
+        "title": "Oops! Vous vous êtes perdus.",
+        "description": "La page <code /> n'existe pas. Comment êtes-vous arrivé ici est un mystère.",
+        "button": "Retourner sur le bon chemin"
+    }
+}

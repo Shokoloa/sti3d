@@ -1,0 +1,4 @@
+# https://www.robotstxt.org/robotstxt.html
+User-Agent: *
+Allow: /
+Sitemap: https://sti3d.vercel.app/sitemap.xml

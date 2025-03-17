@@ -1,0 +1,24 @@
+{
+    "home": {
+        "projects": "Projects",
+        "about": "About",
+        "description": "Freelance Web Developer"
+    },
+    "projects": {
+        "title": "Projects",
+        "description": "Some projects come from work and others are in my free time",
+        "online": "Online",
+        "update": "Update",
+        "inDev": "In development",
+        "offline": "Offline"
+    },
+    "about": {
+        "title": "About me",
+        "description": "Young 16-year-old Freelance developer and student in STI2D, I am passionate about programming, astronomy and creating unique user experiences.<br /><br />Curious and creative, I like to design innovative solutions, explore new technologies and perfect interfaces to make them intuitive and engaging.<br />Always motivated by learning and continuous improvement, I seek to combine technique and creativity to offer projects that are both functional and inspiring."
+    },
+    "notFound": {
+        "title": "Oops! You got lost.",
+        "description": "The page <code /> does not exist. How you got here is a mystery.",
+        "button": "Get back on track"
+    }
+}

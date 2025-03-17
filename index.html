@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark" />
+  <link rel="manifest" href="/manifest.json">
+
+  <!-- Base -->
+  <title>STI2D</title>
+  <meta name="title" content="STI2D">
+  <meta name="theme-color" content="#e5989b">
+  <meta name="description" content="">
+  <link rel="icon" href="/favicon.webp">
+
+  <!-- Google / Search Engine Tags -->
+  <meta name="keywords" content="sti2d, filière, général, enseignement">
+  <link rel="canonical" href="https://sti3d.vercel.app/">
+  <meta itemprop="name" content="STI2D">
+  <meta itemprop="description" content="">
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sti3d.vercel.app/">
+  <meta property="og:title" content="STI2D">
+  <meta property="og:description" content="">
+  <meta name="og:image" content="https://i.ibb.co/ds56ffQs/favicon.webp">
+
+  <!-- Twitter -->
+  <meta name="twitter:title" content="STI2D">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="https://i.ibb.co/ds56ffQs/favicon.webp">
+  <style>
+    .loader {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      --color: hsl(0, 0%, 87%);
+      --animation: 2s ease-in-out infinite;
+    }
+
+    .loader .circle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 20px;
+      height: 20px;
+      border: solid 2px var(--color);
+      border-radius: 50%;
+      margin: 0 10px;
+      background-color: transparent;
+      transform: scale(1.5);
+      opacity: 0.5;
+      animation: circle-keys var(--animation);
+    }
+
+    .loader .circle .dot {
+      position: absolute;
+      transform: translate(-50%, -50%) scale(0);
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: var(--color);
+      animation: dot-keys var(--animation);
+    }
+
+    .loader .circle .outline {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      animation: outline-keys var(--animation);
+    }
+
+    .loader .circle:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+
+    .loader .circle:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+
+    .loader .circle:nth-child(4) {
+      animation-delay: 0.9s;
+    }
+
+    .loader .circle:nth-child(5) {
+      animation-delay: 1.2s;
+    }
+
+    .loader .circle:nth-child(2) .dot {
+      animation-delay: 0.3s;
+    }
+
+    .loader .circle:nth-child(3) .dot {
+      animation-delay: 0.6s;
+    }
+
+    .loader .circle:nth-child(4) .dot {
+      animation-delay: 0.9s;
+    }
+
+    .loader .circle:nth-child(5) .dot {
+      animation-delay: 1.2s;
+    }
+
+    .loader .circle:nth-child(1) .outline {
+      animation-delay: 0.9s;
+    }
+
+    .loader .circle:nth-child(2) .outline {
+      animation-delay: 1.2s;
+    }
+
+    .loader .circle:nth-child(3) .outline {
+      animation-delay: 1.5s;
+    }
+
+    .loader .circle:nth-child(4) .outline {
+      animation-delay: 1.8s;
+    }
+
+    .loader .circle:nth-child(5) .outline {
+      animation-delay: 2.1s;
+    }
+
+    @keyframes circle-keys {
+      0% {
+        transform: scale(1.5);
+        opacity: 0.5;
+      }
+
+      50% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(1.5);
+        opacity: 0.5;
+      }
+    }
+
+    @keyframes dot-keys {
+      0% {
+        transform: scale(0);
+      }
+
+      50% {
+        transform: scale(1);
+      }
+
+      100% {
+        transform: scale(0);
+      }
+    }
+
+    @keyframes outline-keys {
+      0% {
+        transform: scale(0);
+        outline: solid 20px var(--color);
+        outline-offset: 0;
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(1);
+        outline: solid 0 transparent;
+        outline-offset: 20px;
+        opacity: 0;
+      }
+    }
+
+    .errorBackground {
+      perspective: 1600px;
+      color: transparent;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: -10;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      position: absolute;
+      pointer-events: none;
+      background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+    }
+
+    .errorBackground div {
+      transform: translate3d(0, 0, 0) rotateX(60deg) rotateY(0) rotate(0) rotate3d(0, 0, 0, 0deg) skewX(0) skewY(0) scale3d(1, 1, 1) !important;
+      -webkit-mask-image: radial-gradient(var(--tw-mask-shape) var(--tw-mask-reach) at var(--tw-mask-at), var(--tw-mask-stops));
+      mask-image: radial-gradient(var(--tw-mask-shape) var(--tw-mask-reach) at var(--tw-mask-at), var(--tw-mask-stops));
+      --tw-mask-shape: ;
+      --tw-mask-reach: closest-side;
+      --tw-mask-at: center;
+      --tw-mask-from-opacity: 1;
+      --tw-mask-point-from: ;
+      --tw-mask-from: rgba(0, 0, 0, var(--tw-mask-from-opacity)) var(--tw-mask-point-from);
+      --tw-mask-to-opacity: 0;
+      --tw-mask-point-to: ;
+      --tw-mask-to: rgba(0, 0, 0, var(--tw-mask-to-opacity)) var(--tw-mask-point-to);
+      --tw-mask-stops: var(--tw-mask-from), var(--tw-mask-to);
+      color: hsl(var(--foreground) / .5);
+      --foreground: var(--hue) 10% 95%;
+      --hue: 210.11764705882354;
+      width: 200%;
+      height: 200%;
+      --dots-color: hsla(0, 0%, 100%, 0.329);
+      background-image: radial-gradient(var(--dots-color) 1px, transparent 0);
+      background-size: 2rem 2rem;
+      background-position: top;
+    }
+  </style>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <script type="module" src="/src/index.jsx"></script>
+</body>
+<script>
+  function consoleMessage() {
+    let time = performance.timing;
+    let pageloadtime = time.loadEventStart - time.navigationStart;
+
+    console.log("Loaded in " + pageloadtime + "ms")
+  }
+
+  window.addEventListener('load', consoleMessage);
+</script>
+
+</html>

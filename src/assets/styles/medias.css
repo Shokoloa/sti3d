@@ -1,0 +1,135 @@
+@media only screen and (min-width: 1024px) {
+    /*deskop*/
+}
+
+@media screen and (min-width: 767px) and (max-width:1023px) {
+    /*tablet*/
+
+    .projects {
+        padding: 0 10px 0 10px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    /*smartphone*/
+
+    .bg img {
+        width: auto;
+        height: auto;
+    }
+
+    /* Home */
+
+    .hero h1 {
+        font-size: 4rem;
+    }
+
+    .box .title p {
+        font-size: 14px;
+    }
+
+    .container {
+        margin: 60px 0 20px 0;
+    }
+
+    /* Projects */
+
+    .projecttitle {
+        margin-left: 1vh;
+    }
+
+    .project-card-container {
+        margin-bottom: 5vh;
+    }
+
+    .project-card {
+        max-width: 350px;
+        padding: 15px;
+        margin: 0;
+    }
+
+    .project-card .content p {
+        font-size: 11px;
+    }
+
+    .project-card .footer {
+        margin-top: 10px;
+    }
+
+    .slug-desc {
+        z-index: 999;
+        margin-top: 5vh;
+        width: auto;
+        margin-bottom: 10vh;
+    }
+
+    .auto-expand {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: 0 0;
+    }
+
+    .textare-auto {
+        width: 250px;
+    }
+
+    /* About */
+
+    .about h1 {
+        font: 25px mont;
+        margin-bottom: 20px;
+    }
+
+    .about .aboutme {
+        width: 325px;
+        font: 500 13px inter;
+        margin-bottom: 10vh;
+    }
+
+    .about .skills-list {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .about .skill img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .about .skill-tooltip {
+        display: none;
+    }
+
+    .about .skill:hover .skill-tooltip {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    /* 404 */
+
+    .row {
+        flex-direction: column;
+    }
+
+    .row svg {
+        margin: 10vh 0 0 0;
+    }
+
+    .cat-container {
+        margin: 20px 20px 0 20px;
+    }
+
+    .cat-container h1 {
+        font-size: 20px;
+    }
+
+    .cat-container p {
+        font-size: 12px;
+    }
+
+    .cat-container button {
+        font-size: 13px;
+    }
+}
