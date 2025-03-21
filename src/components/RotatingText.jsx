@@ -161,7 +161,7 @@ const RotatingText = forwardRef((props, ref) => {
         <motion.span
             className={cn("text-rotate", mainClassName)}
             {...rest}
-            layout
+            layout="size"
             transition={transition}
         >
             <span className="text-rotate-sr-only">{texts[currentTextIndex]}</span>

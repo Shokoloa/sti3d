@@ -2,6 +2,7 @@ import React, { useState, useEffect, Suspense, lazy } from "react";
 import Snowfall from 'react-snowfall';
 import Confetti from "react-confetti";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { LetterGlitch } from './components/LetterGlitch';
 
 // CSS
 import "./assets/styles/index.css";
@@ -16,11 +17,11 @@ const lazyWithDelay = (importFunc, delay = 0) => {
   );
 };
 
-import { Background } from "./components/Background";
 const ScrollToTop = lazyWithDelay(() => import("./components/ScrollToTop").then(module => ({ default: module.ScrollToTop })));
+import { Analytics } from "@vercel/analytics/react";
 
 // Pages
-const Home = lazyWithDelay(() => import("./pages/Home").then(module => ({ default: module.Home })));
+const Home = lazyWithDelay(() => import("./pages/Home").then(module => ({ default: module.Home })), 2000);
 const NotFound = lazyWithDelay(() => import("./pages/NotFound").then(module => ({ default: module.NotFound })));
 
 const Loader = () => {
@@ -63,13 +64,21 @@ const Content = () => {
 
   return (
     <div className="text" style={{ transitionDuration: '1s' }}>
-      <Background />
+      <section className="bg">
+        <LetterGlitch
+          glitchSpeed={100}
+          centerVignette={true}
+          outerVignette={true}
+          smooth={true}
+        />
+      </section>
       <Routes>
         <Route path="/" element={<Home />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>
       <ScrollToTop />
+      <Analytics />
       {snowflakeCount > 0 && (
         <div className="snowflakes">
           <Snowfall wind={windSpeed} speed={[0, 2]} snowflakeCount={snowflakeCount} />
